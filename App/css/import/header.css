@@ -1,0 +1,249 @@
+@font-face {
+    font-family: "pfont";
+    src: url("../../fonts/Lexend-Regular.ttf");
+}
+
+@font-face {
+    font-family: "tfont";
+    src: url("../../fonts/PixelifySans-Regular.ttf");
+}
+
+:root {
+    /*Colores*/
+    --body-color: #252525;
+    --Pfont: "pfont";
+    --tFont: "tfont";
+}
+
+body {
+    margin: 0;
+    border: 0;
+}
+
+.header-container {
+    position: sticky;
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    height: 100px;
+    font-family: var(--tFont);
+    color: var(--body-color);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.274);
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.title-container img {
+    width: 50px;
+    height: auto;
+    margin: 0px 50px;
+}
+
+.title-container h1 {
+    color: black;
+    font-weight: normal;
+}
+
+.header-container nav {
+    margin-right: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-container nav a {
+    position: relative;
+}
+
+
+.header-container nav a:active {
+    transform: rotate(10deg);
+}
+
+.header-container nav a {
+    color: var(--body-color);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.header-container nav a::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    content: "";
+    background-color: var(--body-color);
+    width: 0%;
+    height: 2px;
+    transition: all 0.3s ease;
+}
+
+.header-container nav a:hover::after {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    left: 30px;
+}
+.menu-button img {
+    width: 100%;
+    height: auto;
+}
+/* Keyframes*/
+
+@keyframes navA {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+
+/*TODO: Estilos Responsive*/
+
+/* Extra small*/
+
+@media (max-width: 576px) {
+    .header-container {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-container {
+        justify-content: center;
+    }
+
+    .title-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .title-container img {
+        width: 30px;
+        margin: 0px 20px;
+    }
+
+    .header-container nav {
+        animation: navA 1s ease reverse;
+        top: 0px;
+        display: none;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        height: 200px;
+        flex-direction: column;
+        margin: 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.199);
+    }
+
+    .header-container nav.open {
+        display: flex;
+        animation: navA 0.6s ease;
+    }
+
+    .header-container nav a {
+        font-size: 1.3rem;
+    }
+
+    .menu-button {
+        width: 30px;
+        top: 35px;
+        display: block;
+        left: 30px;
+    }
+}
+
+/*Small*/
+
+@media (max-width: 768px) and (min-width: 576px) {
+    .header-container {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-container {
+        justify-content: center;
+    }
+
+    .title-container h1 {
+        font-size: 2rem;
+    }
+
+    .title-container img {
+        width: 30px;
+        margin: 0px 20px;
+    }
+
+    .header-container nav {
+        animation: navA 1s ease reverse;
+        top: 0px;
+        display: none;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        height: 200px;
+        flex-direction: column;
+        margin: 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.199);
+    }
+
+    .header-container nav.open {
+        display: flex;
+        animation: navA 0.6s ease;
+    }
+
+    .header-container nav a {
+        font-size: 1.5rem;
+    }
+
+    .menu-button {
+        display: block;
+        left: 30px;
+    }
+
+}
+
+/*Medium*/
+
+@media (max-width: 992px) and (min-width: 768px) {
+    
+}
+
+/*Large*/
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    
+}
+
+
+
