@@ -15,4 +15,26 @@ let globalBoard = getBoards();
 const boardName = document.querySelector("#board-name");
 const addBoardButton = document.querySelector(".add-button");
 
+addBoardButton.addEventListener("click", () => createBoard());
 
+function createBoard() {
+    globalBoard = getBoards();
+    let board = {
+        id: 0,
+        name: boardName.value,
+        taks: []
+    }
+
+    setBoard(board);
+    renderBoards();
+}
+
+function renderBoards() {
+    globalBoard = getBoards;
+    const container = document.querySelector(".boards-container");
+    globalBoard.forEach((e) => {
+        const element = document.createElement("board-class");
+        element.render(e.name);
+        container.appendChild(element);
+    });
+}
