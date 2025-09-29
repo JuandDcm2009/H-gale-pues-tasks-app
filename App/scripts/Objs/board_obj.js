@@ -1,16 +1,17 @@
-
-class Board extends HTMLElement {
+export class Board extends HTMLElement {
     constructor() {
-        this.attachShadow({mode: "open"});    
+        super();
+        this.attachShadow({mode: "open"});
     }
-
     connectedCallback() {
 
     }
-
-    render() {
+    render(name) {
         this.shadowRoot.innerHTML = `
-
+        <div>
+            <h1>${name}</h1>
+        </div>
+            
         `;
     }
 }

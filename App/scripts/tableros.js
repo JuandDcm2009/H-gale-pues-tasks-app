@@ -1,4 +1,5 @@
 import { setBoard, getBoards } from "./helper.js";
+import { Board } from "../scripts/Objs/board_obj.js";
 
 const openBoardButton = document.querySelector(".add-board-button");
 const closeBoardButton = document.querySelector(".close-editor-button");
@@ -16,25 +17,29 @@ const boardName = document.querySelector("#board-name");
 const addBoardButton = document.querySelector(".add-button");
 
 addBoardButton.addEventListener("click", () => createBoard());
-
 function createBoard() {
     globalBoard = getBoards();
     let board = {
-        id: 0,
+        id: globalBoard.length + 1,
         name: boardName.value,
-        taks: []
+        tasks: []
     }
-
-    setBoard(board);
+    globalBoard.push(board);
+    setBoard(globalBoard);
     renderBoards();
 }
 
 function renderBoards() {
-    globalBoard = getBoards;
+    globalBoard = getBoards();
     const container = document.querySelector(".boards-container");
-    globalBoard.forEach((e) => {
+    container.innerHTML = "";
+
+    console.log(globalBoard);
+    globalBoard.forEach(e => {
         const element = document.createElement("board-class");
         element.render(e.name);
         container.appendChild(element);
     });
 }
+
+renderBoards();
