@@ -27,6 +27,7 @@ function createBoard() {
     globalBoard.push(board);
     setBoard(globalBoard);
     renderBoards();
+    closeEditor();
 }
 
 function renderBoards() {

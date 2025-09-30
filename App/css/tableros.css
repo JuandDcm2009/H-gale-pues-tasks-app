@@ -110,3 +110,29 @@
 .editor-form img:active {
     transform: scale(80%);
 }
+
+@keyframes fade {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.boards-container {
+    margin: 0 auto;
+    min-width: 300px;
+    width: auto;
+    max-width: 850px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fade 0.7s 0.3s ease forwards;
+    display:  flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+}
