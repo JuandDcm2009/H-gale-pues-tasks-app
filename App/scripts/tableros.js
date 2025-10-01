@@ -16,7 +16,10 @@ let globalBoard = getBoards();
 const boardName = document.querySelector("#board-name");
 const addBoardButton = document.querySelector(".add-button");
 
+
+
 addBoardButton.addEventListener("click", () => createBoard());
+
 function createBoard() {
     globalBoard = getBoards();
     let board = {
@@ -38,8 +41,9 @@ function renderBoards() {
     console.log(globalBoard);
     globalBoard.forEach(e => {
         const element = document.createElement("board-class");
-        element.render(e.name);
+        element.render(e.id, e.name);
         container.appendChild(element);
+
     });
 }
 
